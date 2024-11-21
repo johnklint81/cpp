@@ -17,10 +17,11 @@ int main(int argc, char *argv[]) {
       for (int ic = 0; ic < fillerLength; ic++) {
           cout << filler;
       }
-      // number - ir limits the characters to fit the allowed column width
+      // ic < (number - ir) limits the characters to fit the currently allowed
+      // column width. 
+      // ic < patternLength makes sure the loop does not exceed the 
+      // length of the pattern string
       for (int ic = 0; ic < patternLength && ic < number - ir; ic++) {
-         // Prints the pattern, restricts the printing to fit the decreasing
-         // number of columns available 
          cout << pattern[ic];
       }
       cout << endl;
