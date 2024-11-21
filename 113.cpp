@@ -34,7 +34,6 @@ int main(int argc, char *argv[]) {
         string middlePadding = string(middlePaddingSize, ' ');
         cout << leftPadding << pattern << middlePadding << pattern << endl;
     }
-
     return 0;
 }
 

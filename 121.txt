@@ -1,0 +1,65 @@
+Operator precedence:
+Unary !~
+Bitwise AND &
+Bitwise XOR ^
+Logical AND &&
+Logical OR ||
+Conditional operator ?:
+Bitwise OR |
+Arithmetic operators -, +
+-------------------------------------------------------------------------------
+
+int a =!~2||1&&2&3^3?6|3:1&3-5;
+
+Assume 8 bit integers, for brevity
+2 = 0000 0010
+~2 = 1111 1101 = -3
+-3 evaluate to true because it is nonzero, and !-3 = !true = false = 0
+
+We now have: 0||1&&2&3^3?6|3:1&3-5;
+
+2 = 0000 0010
+3 = 0000 0011
+2 & 3 --> 2 bitwise and 3 = 0000 0010 = 2
+
+2 = 0000 0010
+3 = 0000 0011
+2^3 --> 2 XOR 3 = 0000 0001 = 1
+
+We now have: 0||1&&1?6|3:1&3-5;
+
+1 && 1 is true and evaluates to 1
+
+We now have 0||1?6|3:1&3-5;
+
+0 || 1 is the same as 0 or 1 which evaluates to 1
+
+We now have 1?6|3:1&3-5;
+
+6 = 0000 0110
+3 = 0000 0011
+
+6|3 = 6 bitwise or = 0000 0111 = 7
+
+We now have 1?7:1&3-5;
+1 ? (7) : (1 & 3 - 5);
+The conditional (ternary) operator ? selects the first operand if the
+expression is true, and since 1 is nonzero it selects 7. Thus, a = 7.
+-------------------------------------------------------------------------------
+
+int b = 10^1-a+++5;
+
+b = 10^1 - a++ +5;
+
+10 = 0000 1010
+ 1 = 0000 0001
+
+10 XOR 1 = 0000 1011 = 11
+
+11 - a++ + 5= 11 - 7 + 5 = 9 
+(a is now 8)
+We thus have that b = 9.
+
+HOWEVER!
+When I run this I get b = -11. No reason why this occurs.
+-------------------------------------------------------------------------------
