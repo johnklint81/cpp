@@ -9,9 +9,10 @@ int main(int argc, char *argv[]) {
     cout << a << endl;
 
     int b = 10^1-a+++5;
-    int c = 10^1 - 7 + 5;
-    int d = (10^1) - 7 + 5;
-
+    int c = 10^1 - 8 + 5;
+    int d = (10^1) - 8 + 5;
+    
+    cout << a << endl;
     cout << b << endl;
     cout << c << endl;
     cout << d << endl;

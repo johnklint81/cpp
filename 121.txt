@@ -47,6 +47,8 @@ The conditional (ternary) operator ? selects the first operand if the
 expression is true, and since 1 is nonzero it selects 7. Thus, a = 7.
 -------------------------------------------------------------------------------
 
+RÄKNA OM DETTA
+
 int b = 10^1-a+++5;
 
 b = 10^1 - a++ +5;
