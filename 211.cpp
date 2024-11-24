@@ -25,6 +25,10 @@ int main() {
     const int minElement = *min_element(numbers.begin(), numbers.end());
     const int maxElement = *max_element(numbers.begin(), numbers.end());
     cout << "The elements in the vector are:" << endl;
+    // for_each iterates from start to end and applies the provided function
+    // to each element. in this case the cout that prints the value. 
+    // [](int num) {cout << num << " ";} is a lambda function, or anonymous
+    // function.
     for_each(numbers.begin(), numbers.end(), [](int num) {
         cout << num << " ";
     });
