@@ -22,7 +22,7 @@ unsigned getCPUTemperature() {
 
 unsigned mixTimeAndTemp(unsigned temperature) {
     auto now = Clock::now().time_since_epoch().count();
-    // 0x5bd1e995 is a MurMurHash inspired value.
+    // 0x5bd1e995 is used in MurMurHash.
     auto mixed = (temperature ^ now) * 0x5bd1e995;
     return mixed;
 }
@@ -55,9 +55,9 @@ int main(int argc, char *argv[]) {
     unsigned temp = getCPUTemperature();
     unsigned mixed = mixTimeAndTemp(temp);
     unsigned randInt = hashFunction(mixed);
-
+    // Wrap the number into the interval (max - min + 1), then add min to force
+    // the desired range.
     unsigned randInRange = (randInt % ( max - min + 1)) + min;
 
     cout << randInRange << endl;
-    
 }
