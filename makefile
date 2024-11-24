@@ -1,45 +1,13 @@
 .PHONY : all
 
-all : 111 112 113 122 123 131 132 133 141 142 143 151 152 153
+# Targets
+TARGETS : 111 112 113 122 123 131 132 133 141 142 143 151 152 153 161
 
-111 : 111.cpp
-	g++ -o 111 111.cpp
+# Default rule
+all : $(TARGETS)
 
-112 : 112.cpp
-	g++ -o 112 112.cpp
+# Build pattern, $@ expands to the target name (e.g. 111)
+# $< expands to the first prerequisite (e.g. 111.cpp)
 
-113 : 113.cpp
-	g++ -o 113 113.cpp
-
-122 : 122.cpp
-	g++ -o 122 122.cpp
-
-123 : 123.cpp
-	g++ -o 123 123.cpp
-
-131 : 131.cpp
-	g++ -o 131 131.cpp
-
-132 : 132.cpp
-	g++ -o 132 132.cpp
-
-133 : 133.cpp
-	g++ -o 133 133.cpp
-
-141 : 141.cpp
-	g++ -o 141 141.cpp
-
-142 : 142.cpp
-	g++ -o 142 142.cpp
-
-143 : 143.cpp
-	g++ -o 143 143.cpp
-
-151 : 151.cpp
-	g++ -o 151 151.cpp
-
-152 : 152.cpp
-	g++ -o 152 152.cpp
-
-153 : 153.cpp
-	g++ -o 153 153.cpp
+%: %.cpp
+	g++ -o $@ $<
