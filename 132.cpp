@@ -12,14 +12,15 @@ stack<char> getRadixNumber(int number, int radix) {
     if (radix < 2 || radix > 16) {
         throw runtime_error("Radix should be between 2 and 16!");
     }
+    // 0 is always 0
     if (number == 0) {
         result.push(0);
         return result;
     }
     // Same as before, except now we divide by radix instead of 2.
     // The remainder is the constant we want to put in front of that position
-    // in the new number. We map this to the string with digits to accomodate
-    // for the extra characters used for bases larger than 10.
+    // in the new number system. We map this to the string with "digits" to
+    // accomodate for the extra characters used for bases larger than 10.
     while (number != 0) {
         int remainder = number % radix;
         char newDigit = digits[remainder];
