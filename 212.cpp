@@ -28,5 +28,21 @@ int main(int argc, char *argv[]) {
     vector<int> product(size);
     transform(vec1.begin(), vec1.end(), vec2.begin(), product.begin(),
               multiplies<>());
+
+    cout << "Sum: ";
+    for (int res : sum) {
+        cout << res << " ";
+    }
+    cout << endl;
+    cout << "Difference: ";
+    for (int res : difference) {
+        cout << res << " ";
+    }
+    cout << endl;
+    cout << "Product: ";
+    for (int res : product) {
+        cout << res << " ";
+    }
+    cout << endl;
     
 }
