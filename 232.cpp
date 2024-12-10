@@ -10,14 +10,16 @@ void matmul(vector<vector<int>>& matrix1, vector<vector<int>>& matrix2) {
     int col1 = matrix1[0].size();
     int row2 = matrix2.size();
     int col2 = matrix2[0].size();
-
+    
+    // Need to match for matmul operation to be defined
     if (col1 != row2) {
         cout << "Dimensions do not match, aborting." << endl;
         return;
     }
 
     vector<vector<int>> result(row1, vector<int>(col2, 0));
-
+    
+    // Multiply matrice elements 
     for (int i = 0; i < row1; i++) {
         for (int j = 0; j < col2; j++) {
             for (int k = 0; k < col1; k++) {

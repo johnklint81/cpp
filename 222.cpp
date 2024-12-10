@@ -7,7 +7,7 @@ using namespace std;
 bool isPalindrome(char *str, int size) {
     bool palindrome = true;
     for (int i = 0; i < size; i++) {
-    if (str[i] != str[size - i -1]) {
+    if (str[i] != str[size - i - 1]) {
             palindrome = false;
         }
     }

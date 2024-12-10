@@ -49,7 +49,7 @@ int main() {
     cout << "Unsorted array: ";
     printArray(intArray, intArraySize);
     sort(intArray, intArraySize);
-    cout << "Sorted array: ";
+    cout << "Sorted ascending: ";
     printArray(intArray, intArraySize);
     cout << "Sorted descending: ";
     sort(intArray, intArraySize, false);
