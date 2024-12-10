@@ -5,12 +5,14 @@
 #define PI 3.14159
 
 using namespace std;
-
+// FIX THIS
 float bisection(float a, float b, const float accuracy) {
     float testValue;
     int iter = 0;
     int maxIter = 10000;
     float midpoint;
+    // Test function can be done like this too!
+    auto testFunctionLambda = sinf;
     // [] is a capture list, it specifies how the lambda function can access
     // variables from the surrounding scope. Lambdas can carry a state.
     function<float(float)> testFunction = [](float x) {
@@ -41,7 +43,7 @@ float bisection(float a, float b, const float accuracy) {
             a = midpoint;
         }
         // Check if we found the true root or are within the require accuracy.
-        if (abs(testValue) == 0 || abs(b - a) < accuracy) {
+        if (abs(testValue) == 0.0 || abs(b - a) < accuracy) {
             return midpoint;
         }
         iter++;

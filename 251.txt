@@ -1,0 +1,58 @@
+Explain the difference between calling functions by value, pointer and
+reference. Show several examples
+----------------------------------------------------------------------
+Calling a funtion by value is the same as creating a copy of the input
+and passing it to the function. Changes to this copy does not affect
+the value outside the function
+
+void func(int x) {
+    x++;
+    cout << x;
+}
+
+int x = 0;
+cout << x;
+func(x);
+cout << x;
+
+gives output:
+
+0
+1
+0
+
+If we instead send the address of x to func as a pointer:
+
+void func(int *x) {
+    *x = 1;
+    cout << *x;
+}
+int x = 0;
+cout << x;
+func(&x);
+cout << x;
+
+we get:
+
+0
+1
+1
+
+If we send x as a reference:
+
+void func(int &x) {
+    x = 1;
+    cout << x;
+}
+int x = 0;
+cout << x;
+func(&x);
+cout << x;
+
+we get:
+0
+1
+1
+
+because we change the value of the original x through the reference/alias x we
+passed to the function

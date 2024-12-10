@@ -1,0 +1,29 @@
+A pointer is a variable that contains the memory address of the content 
+of another variable. It can be reassigned. It can be null.
+
+Examples:
+int x = 1   // this is a declaration of x and assignment of x to the value 1
+int *p = &x // this is a declaration of pointer p using the star operator
+            // and the assignment of p to the value of the address where the 
+            // value of the variable x is stored
+
+The * operator both declares a pointer and derefences it, depending on context
+If we want to change the value that p points to, we must first derefence it,
+then we can assign the value:
+*p = 10 // this line dereferences p, and sets the value stored in its memory
+location to 10. If we were to instead type
+p = 10
+we would attempt to assign the value 10 to the int pointer type variable p, 
+which ideally would give an error but does not. Instead it means we set the pointer p
+to point at the memory address "10", which most likely is not what we want.
+
+-----------------------
+A reference is an alias for another variable. It cannot be reassigned. It cannot
+be null.
+
+Examples:
+int x = 1  // declaration as above
+int &r = x // declare reference x using the & operator and assign it to point at
+           // x. it must be assigned at reference.
+r = 0      // here we set x = 0 through reference
+
