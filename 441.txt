@@ -1,0 +1,23 @@
+A)
+Polymorphism is the concept that we can use the same interface
+to interact with different classes (sharing some fundamental commonality). 
+An example is perhaps a class that creates geometric objects. These will have an area
+and we may want to compute this area using a method. Rather than having different
+methods called area_square(), area_circle(), we may wish to simply have a method called
+area() which is capable of computing the area regardless of type of object (within
+reasonable limits). another example is adding two numbers, we may wish to add ints or
+floats, but require different function with different signatures for this. 
+We may get around this by overloading a function.
+
+B)
+Static linking is when you compile your program and the finished binary includes all
+required files to run the program. This makes it faster but also larger.
+In dynamical linking (so-files, dll-files), the program does not contain everything
+necessary to run, but instead fetch these at runtime from the operating system.
+Typically smaller and slightly slower programs, but also easier to maintain (they
+do not need recompiling whenever a required library is updated).
+
+C)
+Abstract base classes are "blueprints" for classes that cannot be instantiated.
+Instead they function as guidelines for child classes and often contain methods
+that must be implemented. They also enforce a common interface for child classes.
