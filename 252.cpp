@@ -22,13 +22,13 @@ int main() {
     // loop reflect this. Arrays are always passed by reference in C++ when
     // they are passed to functions. Primitive types, however,are passed by 
     // value as default.
-    Increment(array);
+    Increment(arr);
 
     // Here we pass val as a value and increment it in the local scope of the
     // function. Thus, it does not change outside the scope. We could pass as
     // &val instead if we wanted it to change. But then we would need to change
     // function signature to reflect this.
-    Increment(value);
+    Increment(val);
     cout << "array values are: ";
     for (int i = 0; i < 5; i++) {
         cout << arr[i] << " ";
